@@ -6,6 +6,7 @@ export interface Team {
   short: string
   color: string
   secondary?: string
+  crest?: string
   monogram: string
 }
 
@@ -24,6 +25,9 @@ export interface NewsCardData extends BaseCard {
   source: string
   published: string
   readTime: string
+  publishedAt?: string
+  upvotes?: number
+  downvotes?: number
   body: string[]
 }
 
@@ -41,7 +45,10 @@ export interface MatchCardData extends BaseCard {
   away: Team
   score: [number, number]
   minute: number
-  status: 'live' | 'finished'
+  status: 'live' | 'finished' | 'scheduled'
+  kickoff?: string
+  dateLabel?: string
+  matchday?: number
   venue: string
   events: MatchEvent[]
   possession: [number, number]
